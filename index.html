@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+  </head>
+  <body>
+
+    <div style="position: relative; width: 768px; margin: auto;">
+      <div id="caption">Sharing Notes</div>
+      <hr />
+
+      <div id="sharednotes">
+	{% for snote in snotes %}
+	  {% if snote.creator %}
+            <crimson>{{ snote.creator.nickname }}</crimson> shared with <b>you</b>:
+	  {% else %}
+            An anonymous person shared:
+          {% endif %}
+          <blockquote>{{ snote.content|escape }}</blockquote>
+        {% endfor %}
+      </div>
+      
+      <div id="myposts">
+	{% for mynote in mynotes %}
+	  {% if mynote.creator %}
+            I have shared with <crimson>{{ mynote.shared_viewer }}</crimson>:
+	  {% else %}
+	    An anonymous person shared:
+          {% endif %}
+          <blockquote>{{ mynote.content|escape }}</blockquote>
+        {% endfor %}
+
+      </div>
+      
+      <div id="notearea">
+	<form action="/sign" method="post">
+	  <div>Share this note:<br><textarea name="content" rows="3" cols="60"></textarea></div>
+	  <div>With person:<input type="text" name="shared_viewer" cols="40"></div>
+	  <div><input type="submit" value="Sign Guestbook"></div>
+	</form>
+	
+	<a href="{{ url }}">{{ url_linktext }}</a>
+      </div>
+    </div>
+    
+  </body>
+</html>

@@ -1,0 +1,41 @@
+body {
+    font-family: Verdana, Helvetica, sans-serif;
+    background-color: #F8F3D2;
+}
+crimson {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #7D110C;
+}
+#caption {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 250%;
+    color: #7D110C;
+    background-color: #F8F3D2;
+    text-align: center;
+    position: relative;
+}
+
+#sharednotes {
+    font-family: Verdana, Helvetica, sans-serif;
+    position: relative;
+    float: left;
+    width: 65%;
+    text-align: left;
+}
+
+#myposts {
+    font-family: Verdana, Helvetica, sans-serif;
+    position: relative;
+    float: left;
+    width: 35%;
+    text-align: left;
+    font-size: 80%;
+}
+
+#notearea {
+    font-family: Verdana, Helvetica, sans-serif;
+    position: relative;
+    clear: both;
+}
